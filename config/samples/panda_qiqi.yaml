@@ -1,0 +1,11 @@
+apiVersion: animals.zoo.k8s.io/v1alpha1
+kind: Panda
+metadata:
+  name: qiqi 
+spec:
+  birthYear: 2018
+  birthMonth: 7 
+  birthDay: 17 
+  birthPlace: Shanghai 
+  momName: princess 
+  birthWeight: 6

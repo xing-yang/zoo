@@ -1,0 +1,12 @@
+apiVersion: animals.zoo.k8s.io/v1alpha1
+kind: Panda
+metadata:
+  name: dangdang 
+spec:
+  birthYear: 2018
+  birthMonth: 10
+  birthDay: 12
+  birthPlace: Chengdu
+  momName: fangfang
+  dadName: ganggang
+  birthWeight: 5

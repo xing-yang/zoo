@@ -1,0 +1,12 @@
+apiVersion: animals.zoo.k8s.io/v1alpha1
+kind: Panda
+metadata:
+  name: pingping 
+spec:
+  birthYear: 2018
+  birthMonth: 9
+  birthDay: 15
+  birthPlace: Chengdu
+  momName: qingqing
+  dadName: ningning
+  birthWeight: 3
