@@ -1,0 +1,92 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  creationTimestamp: null
+  labels:
+    controller-tools.k8s.io: "1.0"
+  name: pandas.animals.zoo.k8s.io
+spec:
+  group: animals.zoo.k8s.io
+  names:
+    kind: Panda
+    plural: pandas
+  scope: Namespaced
+  validation:
+    openAPIV3Schema:
+      properties:
+        apiVersion:
+          description: 'APIVersion defines the versioned schema of this representation
+            of an object. Servers should convert recognized schemas to the latest
+            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources'
+          type: string
+        kind:
+          description: 'Kind is a string value representing the REST resource this
+            object represents. Servers may infer this from the endpoint the client
+            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds'
+          type: string
+        metadata:
+          type: object
+        spec:
+          properties:
+            birthDay:
+              format: int32
+              type: integer
+            birthMonth:
+              format: int32
+              type: integer
+            birthPlace:
+              type: string
+            birthWeight:
+              format: int32
+              type: integer
+            birthYear:
+              description: 'INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
+                Important: Run "make" to regenerate code after modifying this file'
+              format: int32
+              type: integer
+            dadName:
+              type: string
+            momName:
+              type: string
+          required:
+          - birthYear
+          - birthMonth
+          - birthDay
+          - birthPlace
+          - momName
+          - dadName
+          - birthWeight
+          type: object
+        status:
+          properties:
+            age:
+              description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
+                of cluster Important: Run "make" to regenerate code after modifying
+                this file Age by number of months'
+              format: int32
+              type: integer
+            appetiteScale:
+              description: AppetiteScale can be Low, Normal, or High
+              type: string
+            bambooConsumption:
+              description: Daily bamboo consumption
+              format: int64
+              type: integer
+            weight:
+              description: Weight in pounds
+              format: int32
+              type: integer
+            weightScale:
+              description: WeightScale can be Low, Normal, or High
+              type: string
+          required:
+          - age
+          - weight
+          type: object
+  version: v1alpha1
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
