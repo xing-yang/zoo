@@ -3,10 +3,6 @@ kind: Panda
 metadata:
   name: pingping 
 spec:
-  birthYear: 2018
-  birthMonth: 9
-  birthDay: 15
+  birthDay: 9/15/2018
   birthPlace: Chengdu
-  momName: qingqing
-  dadName: ningning
   birthWeight: 3

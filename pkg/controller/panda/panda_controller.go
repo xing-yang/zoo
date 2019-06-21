@@ -126,9 +126,7 @@ func (r *ReconcilePanda) Reconcile(request reconcile.Request) (reconcile.Result,
 
 	instance.Status.Age = foundPanda.Age
 	instance.Status.Weight = foundPanda.Weight
-	instance.Status.BambooConsumption = &(foundPanda.BambooConsumption)
-	instance.Status.AppetiteScale = getAppetiteScale(foundPanda.AppetiteScale)
-	instance.Status.WeightScale = getWeightScale(foundPanda.WeightScale)
+	instance.Status.BambooConsumption = foundPanda.BambooConsumption
 
 	err = r.Update(context.TODO(), instance)
 
@@ -137,30 +135,6 @@ func (r *ReconcilePanda) Reconcile(request reconcile.Request) (reconcile.Result,
 	}
 
 	return reconcile.Result{}, nil
-}
-
-func getAppetiteScale(appetite string) *animalsv1alpha1.AppetiteScale {
-	var result animalsv1alpha1.AppetiteScale
-	if string(animalsv1alpha1.AppetiteLow) == appetite {
-		result = animalsv1alpha1.AppetiteLow
-	} else if string(animalsv1alpha1.AppetiteHigh) == appetite {
-		result = animalsv1alpha1.AppetiteHigh
-	} else {
-		result = animalsv1alpha1.AppetiteNormal
-	}
-	return &result
-}
-
-func getWeightScale(weight string) *animalsv1alpha1.WeightScale {
-	var result animalsv1alpha1.WeightScale
-	if string(animalsv1alpha1.AppetiteLow) == weight {
-		result = animalsv1alpha1.WeightLow
-	} else if string(animalsv1alpha1.WeightHigh) == weight {
-		result = animalsv1alpha1.WeightHigh
-	} else {
-		result = animalsv1alpha1.WeightNormal
-	}
-	return &result
 }
 
 func getData() Results {
@@ -209,11 +183,8 @@ type PandaRecord struct {
 	BirthMonth        int32  `json:"birthMonth"`
 	BirthDay          int32  `json:"birthDay"`
 	BirthPlace        string `json:"birthPlace"`
-	MomName           string `json:"momName"`
 	BirthWeight       int32  `json:"birthWeight"`
 	Age               int32  `json:"age"`
 	Weight            int32  `json:"weight"`
 	BambooConsumption int32  `json:"bambooConsumption"`
-	AppetiteScale     string `json:"appetiteScale"`
-	WeightScale       string `json:"weightScale"`
 }

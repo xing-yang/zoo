@@ -20,65 +20,19 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
-// NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
-
 // PandaSpec defines the desired state of Panda
 type PandaSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-	BirthYear int32 `json:"birthYear" protobuf:"varint,1,opt,name=birthYear"`
-
-	BirthMonth int32 `json:"birthMonth" protobuf:"varint,2,opt,name=birthMonth"`
-
-	BirthDay int32 `json:"birthDay" protobuf:"varint,3,opt,name=birthDay"`
-
-	BirthPlace string `json:"birthPlace" protobuf:"bytes,4,opt,name=birthPlace"`
-
-	MomName string `json:"momName" protobuf:"bytes,5,opt,name=momName"`
-
-	// Birth weight is measured in ounces
-	BirthWeight int32 `json:"birthWeight" protobuf:"varint,7,opt,name=birthWeight"`
+	BirthDay    string `json:"birthDay" protobuf:"bytes,1,opt,name=birthDay"`
+	BirthPlace  string `json:"birthPlace" protobuf:"bytes,2,opt,name=birthPlace"`
+	BirthWeight int32  `json:"birthWeight" protobuf:"varint,3,opt,name=birthWeight"`
 }
 
 // PandaStatus defines the observed state of Panda
 type PandaStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-	// Age is measured by number of months
-	Age int32 `json:"age" protobuf:"varint,1,opt,name=age"`
-
-	// Weight is measured in pounds
-	Weight int32 `json:"weight" protobuf:"varint,2,opt,name=weight"`
-
-	// Daily bamboo consumption in pounds
-	// +optional
-	BambooConsumption *int32 `json:"bambooConsumption,omitempty" protobuf:"varint,3,opt,name=bambooConsumption"`
-
-	// AppetiteScale can be Low, Normal, or High
-	// +optional
-	AppetiteScale *AppetiteScale `json:"appetiteScale,omitempty" protobuf:"bytes,4,opt,name=appetiteScale"`
-
-	// WeightScale can be Low, Normal, or High
-	// +optional
-	WeightScale *WeightScale `json:"weightScale,omitempty" protobuf:"bytes,5,opt,name=weightScale"`
+	Age               int32 `json:"age" protobuf:"varint,1,opt,name=age"`
+	Weight            int32 `json:"weight" protobuf:"varint,2,opt,name=weight"`
+	BambooConsumption int32 `json:"bambooConsumption,omitempty" protobuf:"varint,3,opt,name=bambooConsumption"`
 }
-
-type AppetiteScale string
-
-const (
-	AppetiteLow    AppetiteScale = "Low"
-	AppetiteNormal AppetiteScale = "Normal"
-	AppetiteHigh   AppetiteScale = "High"
-)
-
-type WeightScale string
-
-const (
-	WeightLow    WeightScale = "Low"
-	WeightNormal WeightScale = "Normal"
-	WeightHigh   WeightScale = "High"
-)
 
 // +genclient
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object

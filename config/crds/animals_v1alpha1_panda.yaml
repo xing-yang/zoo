@@ -29,54 +29,28 @@ spec:
         spec:
           properties:
             birthDay:
-              format: int32
-              type: integer
-            birthMonth:
-              format: int32
-              type: integer
+              type: string
             birthPlace:
               type: string
             birthWeight:
-              description: Birth weight is measured in ounces
               format: int32
               type: integer
-            birthYear:
-              description: 'INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-                Important: Run "make" to regenerate code after modifying this file'
-              format: int32
-              type: integer
-            momName:
-              type: string
           required:
-          - birthYear
-          - birthMonth
           - birthDay
           - birthPlace
-          - momName
           - birthWeight
           type: object
         status:
           properties:
             age:
-              description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
-                of cluster Important: Run "make" to regenerate code after modifying
-                this file Age is measured by number of months'
               format: int32
               type: integer
-            appetiteScale:
-              description: AppetiteScale can be Low, Normal, or High
-              type: string
             bambooConsumption:
-              description: Daily bamboo consumption in pounds
               format: int32
               type: integer
             weight:
-              description: Weight is measured in pounds
               format: int32
               type: integer
-            weightScale:
-              description: WeightScale can be Low, Normal, or High
-              type: string
           required:
           - age
           - weight

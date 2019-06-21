@@ -3,11 +3,8 @@
   [
     {
       "name": "qiqi",
-      "birthYear": 2018,
-      "birthMonth": 7,
-      "birthDay": 17,
+      "birthDay": "7/17/2018",
       "birthPlace": "Shanghai",
-      "momName": "princess",
       "birthWeight": 6,
       "age": 11,
       "weight": 60,
@@ -17,11 +14,8 @@
     },
     {
       "name": "pingping",
-      "birthYear": 2018,
-      "birthMonth": 9,
-      "birthDay": 15,
+      "birthDay": "9/15/2018",
       "birthPlace": "Chengdu",
-      "momName": "qingqing",
       "birthWeight": 3,
       "age": 9,
       "weight": 50,
@@ -31,11 +25,8 @@
     },
     {
       "name": "dangdang",
-      "birthYear": 2018,
-      "birthMonth": 10,
-      "birthDay": 12,
+      "birthDay": "10/12/2018",
       "birthPlace": "Chengdu",
-      "momName": "fangfang",
       "birthWeight": 5,
       "age": 8,
       "weight": 70,

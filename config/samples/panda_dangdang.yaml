@@ -3,10 +3,6 @@ kind: Panda
 metadata:
   name: dangdang 
 spec:
-  birthYear: 2018
-  birthMonth: 10
-  birthDay: 12
+  birthDay: 10/12/2018
   birthPlace: Chengdu
-  momName: fangfang
-  dadName: ganggang
   birthWeight: 5

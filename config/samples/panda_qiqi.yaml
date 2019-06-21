@@ -3,9 +3,6 @@ kind: Panda
 metadata:
   name: qiqi 
 spec:
-  birthYear: 2018
-  birthMonth: 7 
-  birthDay: 17 
+  birthDay: 7/17/2018 
   birthPlace: Shanghai 
-  momName: princess 
   birthWeight: 6
