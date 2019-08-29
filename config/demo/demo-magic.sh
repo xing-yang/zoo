@@ -11,6 +11,8 @@
 #
 ###############################################################################
 
+# Note: This is from https://github.com/paxtonhare/demo-magic
+
 # the speed to "type" the text
 TYPE_SPEED=20
 
